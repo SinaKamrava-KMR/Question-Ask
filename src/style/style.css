@@ -1,4 +1,107 @@
-body{
-  font-size: 10px;
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/fonts/webfonts/Vazirmatn[wght].woff2")
+      format("woff2 supports variations"),
+    url("/src/fonts/webfonts/Vazirmatn[wght].woff2")
+      format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
+
+:root{
+  font-family: "Vazirmatn", sans-serif;
+  white-space: nowrap;
+  --main-color:#e5e5e5;
+  --btn-primery-color:#27ae60;
+  --btn-primery-hover-color:#20914f;
+  --btn-primery-active-color:#1d8347;
+  --border-color:lightgray;
+  --shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  --max-width-view-port: 1440px;
+  --max-width-modal-view-port: 640px;
+  --text-color:#141414;
+  --border-reduse :.20rem
+}
+
+
+body{
+  font-size: 10px;
+  background-color: var(--main-color);
+  color: var(--text-color);
+
+}
+
+.spacer{
+  flex: 1;
+}
+
+.btn{
+  height: 2rem;
+  padding: 0 20px;
+  border: 0;
+  outline: 0;
+  border-radius:var(--border-reduse) ;
+  font-size: .8rem;
+  color: white;
+}
+
+.primary-btn{
+  background-color: var(--btn-primery-color);
+}
+.primary-btn:hover{
+  background-color: var(--btn-primery-hover-color);
+}
+.primary-btn:active{
+  background-color: var(--btn-primery-active-color);
+}
+/* ======== Header ===== */
+.main-header{
+  display: flex;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  height: 4rem;
+  position: sticky;
+  top: 0;
+}
+
+.wrapper{
+  width: 100%;
+  max-width: var(--max-width-view-port);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-inline: 2rem;
+
+
+}
+.main-header__user-profile{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-profile__user-name{
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+.user-profile__drop-down{
+  margin-top: .3rem;
+}
+
+.user-profile__avatar{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  overflow: hidden;
+  border:1px solid var(--border-color);
+}
+.user-profile__avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============  MAIN BODY ================= */
