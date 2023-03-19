@@ -47,7 +47,39 @@
 
     </main>
 
+    <div id="add-modal-question" class="hidden">
+      <div class="modal-background"></div>
+      <aside class="modal">
+        <header class="modal-header">
+          <p class="modal-header__title">ایجاد سوًال جدید</p>
+          <span class="spacer"></span>
+          <span id="modal-close">✕</span>
+        </header>
 
+        <div class="modal__input-wrapper">
+
+          <label class="modal__input-question-subject">
+            <span >عنوان سوًال</span>
+            <input type="text" id="question-subject" placeholder="عنوان سوال خود را وارد کنید">
+          </label>
+
+          <label  class="modal__input-question-text">
+            <span>متن سوًال</span>
+            <textarea id="question-text" cols="30" rows="10" placeholder="توضیحات خود را وارد کنید"></textarea>
+          </label>
+
+            <div class="modal__buttons-wrapper">
+              <button id="discard-question" class="btn secondry-btn">
+                انصراف
+              </button>
+              <button id="submit-question" class="btn primary-btn">ایجاد سوًال</button>
+
+            </div>
+        </div>
+      </aside>
+
+    
+    </div>
 
   </div>
 
