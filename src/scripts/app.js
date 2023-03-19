@@ -3,22 +3,53 @@ const addQuestionBtn = document.getElementById("add-question");
 const questions = JSON.parse(window.localStorage.getItem("questions")) ??
   [];
 
-UpdateQuestionList()
+const modalContainerElm = document.getElementById("add-modal-question");
+const modalBgElm =document.querySelector(".modal-background")
+const modalCloseBtn = document.getElementById("modal-close")
+const discardModalBtn = document.getElementById("discard-question")
+const submitModalBtn = document.getElementById("submit-question")
 
+const questionTextInput = document.getElementById("question-text")
+const questionSubjectInput = document.getElementById("question-subject")
+
+UpdateQuestionList()
+// addFakeData()
 
 addQuestionBtn.addEventListener("click", () => {
-  
+  modalOpen(true)
  
+})
+modalBgElm.addEventListener("click", () => {
+  modalOpen(false)
+})
+
+modalCloseBtn.addEventListener("click", () => {
+  modalOpen(false)
+})
+discardModalBtn.addEventListener("click", () => {
+  modalOpen(false)
+})
+
+
+submitModalBtn.addEventListener("click", () => {
+  if (questionSubjectInput.value=="" && questionTextInput.value=="") return
+  addQuestion({
+    title: questionSubjectInput.value,
+    content: questionTextInput.value
+  })
+  modalOpen(false)
+
 })
 
 
 
 
-
-
-
-
-
+function modalOpen(isOpen) {
+  questionTextInput.value = ""
+  questionSubjectInput.value=""
+  if (isOpen) modalContainerElm.classList.remove("hidden")
+  else modalContainerElm.classList.add("hidden")
+}
 
 
 
@@ -66,7 +97,7 @@ function createQuestionCard({
             <button 
             class="btn secondry-btn" 
             id="see-question-details"
-            onclick="window.location.assign("/question.html?id=${id}")">
+            onclick="window.location.assign('/question.html?id=${id}')">
               مشاهده جزییات
             </button>
           </div>

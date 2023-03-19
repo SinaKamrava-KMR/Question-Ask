@@ -254,6 +254,9 @@ body::-webkit-scrollbar{
   justify-content: center;
   align-items: center;
 }
+#modal-close{
+  cursor: pointer;
+}
 
 .modal-background{
   position: absolute;
