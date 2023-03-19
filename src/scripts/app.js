@@ -12,11 +12,14 @@ const submitModalBtn = document.getElementById("submit-question")
 const questionTextInput = document.getElementById("question-text")
 const questionSubjectInput = document.getElementById("question-subject")
 
+
+
 UpdateQuestionList()
 // addFakeData()
 
 addQuestionBtn.addEventListener("click", () => {
   modalOpen(true)
+
  
 })
 modalBgElm.addEventListener("click", () => {
@@ -37,6 +40,7 @@ submitModalBtn.addEventListener("click", () => {
     title: questionSubjectInput.value,
     content: questionTextInput.value
   })
+  showAlert()
   modalOpen(false)
 
 })
@@ -52,7 +56,18 @@ function modalOpen(isOpen) {
 }
 
 
-
+function showAlert() {
+  const alertElm = document.querySelector(".alert")
+  alertElm.classList.remove("hide")
+  alertElm.classList.add("show")
+  if (alertElm.classList.contains("hidden")) {
+    alertElm.classList.remove("hidden")
+  }
+  setTimeout(() => {
+    alertElm.classList.add("hide")
+    alertElm.classList.remove("show")
+  }, 5000);
+}
 
 function createQuestionCard({
   id="",
@@ -132,6 +147,7 @@ function UpdateQuestionList() {
     .join(" ")
    
 }
+
 
 
 
