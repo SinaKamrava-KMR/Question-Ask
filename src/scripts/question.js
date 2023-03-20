@@ -1,5 +1,5 @@
 
-const answers = (JSON.parse(window.localStorage.getItem("answers")) ?? []).filter(({ qId }) => qId == findQuestionId());
+const answers = (JSON.parse(window.localStorage.getItem(`answers`)) ?? []);
 
 const answersElmWrapper = document.getElementById("answer-list");
 const sendAnswerBtn = document.getElementById("send-answer-btn");
@@ -21,6 +21,7 @@ updateAnswersList()
 
 function updateAnswersList() {
   answersElmWrapper.innerHTML = answers
+    .filter(({ qId }) => qId === findQuestionId())
     .map((answer) => createAnswerCard(answer))
     .join(" ")
 }
@@ -37,7 +38,7 @@ function addAnswer({userName = "", content=""}) {
     disLikeCount: Math.trunc(Math.random() * 50)
   })
 
-  window.localStorage.setItem("answers", JSON.stringify(answers));
+  window.localStorage.setItem(`answers`, JSON.stringify(answers));
   updateAnswersList()
 
 }
