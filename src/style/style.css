@@ -581,3 +581,6 @@ padding-inline: 2rem;
   outline: 1px solid rgb(191, 191, 191);
 
 }
+#send-answer-btn{
+  align-self: flex-start;
+}

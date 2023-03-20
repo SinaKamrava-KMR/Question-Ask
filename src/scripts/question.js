@@ -2,9 +2,16 @@
 const answers = (JSON.parse(window.localStorage.getItem("answers")) ?? []).filter(({ qId }) => qId == findQuestionId());
 
 const answersElmWrapper = document.getElementById("answer-list");
+const sendAnswerBtn = document.getElementById("send-answer-btn");
+const answerInput = document.getElementById("answer-input")
 
+sendAnswerBtn.addEventListener("click", () => {
+  if (answerInput.value == "") return;
 
-
+  addAnswer({ userName: "سارا بیات", content: answerInput.value });
+  showAlert();
+  answerInput.value=""
+})
 
 
 addUserQuestion()
