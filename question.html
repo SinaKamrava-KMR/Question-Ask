@@ -1,14 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Question</title>
+  <link rel="stylesheet" href="/src/style/reset.css">
+  <link rel="stylesheet" href="/src/style/style.css">
+
 </head>
 <body>
 
-  this is a question page 
   
+  <div id="main">
+
+    <div class="alert hidden">
+      <div class="alert__message">جواب شما با موفقیت ثبت شد</div>
+      <div class="progress"></div>
+    </div>
+
+
+    <header class="main-header">
+
+
+      <div class="wrapper">
+        <h1 class="main-header__title">جزییات سوًال</h1>
+
+        <div class="spacer"></div>
+
+        <button class="btn primary-btn" id="add-question">
+          <span>+</span>
+          <span>سوًال جدید</span>
+        </button>
+
+        <section class="main-header__user-profile">
+          <div class="user-profile__avatar">
+            <img src="/src/img/profile.jpg" alt="user profile image">
+          </div>
+
+          <div class="user-profile__user-name"> الناز شاکردوست</div>
+          <div class="user-profile__drop-down">
+            <img src="/src/img/drop-down.svg" alt="drop down icon">
+          </div>
+        </section>
+
+
+      </div>
+    </header>
+
+    <main class="main-container gap3">
+
+        <div id="main__user-question" ></div>
+        
+        <div class="main-container__title">پاسخ ها</div>
+
+        <div class="wrapper" id="answer-list">
+
+        <!-- ========================================== -->
+
+        <!-- ========================================== -->
+
+
+        </div>
+
+                <!-- 
+          ============  add answer input =============
+        -->
+        <section class="send-answer-wrapper">
+          <h2>پاسخ خود را ثبت کنید</h2>
+          <label class="send-answer-wrapper__input-container">
+            <p>پاسخ خود را بنویسید</p>
+            <textarea id="answer-input" cols="30" rows="10" placeholder="متن پاسخ"></textarea>
+          </label>
+        </section>
+    </main>
+
+    
+    <div id="add-modal-question" class="hidden">
+      <div class="modal-background"></div>
+      <aside class="modal">
+        <header class="modal-header">
+          <p class="modal-header__title">ایجاد سوًال جدید</p>
+          <span class="spacer"></span>
+          <span id="modal-close">✕</span>
+        </header>
+
+        <div class="modal__input-wrapper">
+
+          <label class="modal__input-question-subject">
+            <span >عنوان سوًال</span>
+            <input type="text" id="question-subject" placeholder="عنوان سوال خود را وارد کنید">
+          </label>
+
+          <label  class="modal__input-question-text">
+            <span>متن سوًال</span>
+            <textarea id="question-text" cols="30" rows="10" placeholder="توضیحات خود را وارد کنید"></textarea>
+          </label>
+
+            <div class="modal__buttons-wrapper">
+              <button id="discard-question" class="btn secondry-btn">
+                انصراف
+              </button>
+              <button id="submit-question" class="btn primary-btn">ایجاد سوًال</button>
+
+            </div>
+        </div>
+      </aside>
+
+    
+    </div>
+  
+
+
+    
+
+  </div>
+
+
+
+
+
+
+  <script src="/src/scripts/app.js"></script>
+  <script src="/src/scripts/question.js"></script>
+
 </body>
 </html>
